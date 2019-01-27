@@ -13,6 +13,9 @@ Task Initialize {
     $Script:TestPath = Join-Path $ProjectRoot 'test'
     $Script:TestIntegrationPath = Join-Path $TestPath 'integration'
     $Script:TestUnitPath = Join-Path $TestPath 'unit'
+    $Script:LocalPSModulePath = Join-Path $ProjectRoot 'psmodules'
+    $Script:ConfigPath = Join-Path $ProjectRoot 'config'
+    $Script:DependenciesFile = Join-Path $ConfigPath 'dependencies.json'
 
     if($OutputPath) {
         'OutputPath derived from user input'
@@ -26,10 +29,26 @@ Task Initialize {
         $Script:OutputPath = Join-Path $ProjectRoot 'bin'
     }
 
-    $Script:ModuleOutputPath = Join-Path $OutputPath $ModuleName
+    $Script:ModulesOutputPath = Join-Path $OutputPath 'modules'
+    $Script:ModuleOutputPath = Join-Path $ModulesOutputPath $ModuleName
     $Script:ModuleOutputManifestFile = Join-Path $ModuleOutputPath "$ModuleName.psd1"
     $Script:ModuleOutputRootModuleFile = Join-Path $ModuleOutputPath "$ModuleName.psm1"
 
+    $ModulePaths = $env:PSModulePath -split [System.IO.Path]::PathSeparator
+    if($ModulePaths -NotContains $LocalPSModulePath) {
+        $env:PSModulePath = '{0}{1}{2}' -f @(
+            $env:PSModulePath
+            [System.IO.Path]::PathSeparator
+            $LocalPSModulePath
+        )
+    }
+
+    $Script:ProjectDirectories = @(
+        $OutputPath
+        $ModulesOutputPath
+        $ModuleOutputPath
+        $LocalPSModulePath
+    )
 
     ' '
     'ProjectRoot:                {0}' -f $Script:ProjectRoot
@@ -47,7 +66,13 @@ Task Initialize {
     'TestIntegrationPath:        {0}' -f $Script:TestIntegrationPath
     'TestUnitPath:               {0}' -f $Script:TestUnitPath
     'OutputPath:                 {0}' -f $Script:OutputPath
+    'ModulesOutputPath:          {0}' -f $Script:ModulesOutputPath
     'ModuleOutputPath:           {0}' -f $Script:ModuleOutputPath
     'ModuleOutputManifestFile:   {0}' -f $Script:ModuleOutputManifestFile
     'ModuleOutputRootModuleFile: {0}' -f $Script:ModuleOutputRootModuleFile
+    'LocalPSModulePath:          {0}' -f $Script:LocalPSModulePath
+    'ConfigPath:                 {0}' -f $Script:ConfigPath
+    'DependenciesFile:           {0}' -f $Script:DependenciesFile
+    'env:PSModulePath:           {0}' -f $env:PSModulePath
+    'ProjectDirectories:         {0}' -f ($Script:ProjectDirectories -join ', ')
 }

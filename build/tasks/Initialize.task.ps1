@@ -31,6 +31,7 @@ Task Initialize {
 
     $Script:ModulesOutputPath = Join-Path $OutputPath 'modules'
     $Script:ModuleOutputPath = Join-Path $ModulesOutputPath $ModuleName
+    $Script:ModuleOutputAssetsPath = Join-Path $ModuleOutputPath 'assets'
     $Script:ModuleOutputManifestFile = Join-Path $ModuleOutputPath "$ModuleName.psd1"
     $Script:ModuleOutputRootModuleFile = Join-Path $ModuleOutputPath "$ModuleName.psm1"
 
@@ -68,6 +69,7 @@ Task Initialize {
     'OutputPath:                 {0}' -f $Script:OutputPath
     'ModulesOutputPath:          {0}' -f $Script:ModulesOutputPath
     'ModuleOutputPath:           {0}' -f $Script:ModuleOutputPath
+    'ModuleOutputAssetsPath:     {0}' -f $Script:ModuleOutputAssetsPath
     'ModuleOutputManifestFile:   {0}' -f $Script:ModuleOutputManifestFile
     'ModuleOutputRootModuleFile: {0}' -f $Script:ModuleOutputRootModuleFile
     'LocalPSModulePath:          {0}' -f $Script:LocalPSModulePath

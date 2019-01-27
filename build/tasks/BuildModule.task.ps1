@@ -1,0 +1,1 @@
+Task BuildModule Initialize, CreatePaths, CopyModuleBaseFiles, CopyModuleSourceFiles, CopyModuleAssets

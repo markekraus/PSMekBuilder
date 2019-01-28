@@ -6,7 +6,40 @@ Param(
 
     [Parameter()]
     [string]
-    $OutputPath
+    $OutputPath,
+
+    [Parameter()]
+    [string]
+    $Phase,
+
+    [Parameter()]
+    [string]
+    $PSGalleryApiKey,
+
+    [Parameter()]
+    [string]
+    $PSRepositoryName = $env:PSRepositoryName,
+
+    [Parameter()]
+    [string]
+    $PSRepositoryUrl = $env:PSRepositoryUrl,
+
+    [Parameter()]
+    [ValidateSet('','none','basic','apikey')]
+    [string]
+    $PSRepositoryAuthMethod = $env:PSRepositoryAuthMethod,
+
+    [Parameter()]
+    [string]
+    $PSRepositoryUser = $env:PSRepositoryUser,
+
+    [Parameter()]
+    [string]
+    $PSRepositoryPassword = $env:PSRepositoryPassword,
+
+    [Parameter()]
+    [string]
+    $PSRepositoryApiKey = $env:PSRepositoryApiKey
 )
 
 Set-BuildHeader {

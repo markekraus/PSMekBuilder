@@ -52,29 +52,38 @@ Task Initialize {
     )
 
     ' '
-    'ProjectRoot:                {0}' -f $Script:ProjectRoot
-    'ModuleName:                 {0}' -f $Script:ModuleName
-    'SrcPath:                    {0}' -f $Script:SrcPath
-    'ModuleSrcPath:              {0}' -f $Script:ModuleSrcPath
-    'ModuleSrcManifestFile:      {0}' -f $Script:ModuleSrcManifestFile
-    'ModuleSrcRootModuleFile:    {0}' -f $Script:ModuleSrcRootModuleFile
-    'ModuleSrcPublicPath:        {0}' -f $Script:ModuleSrcPublicPath
-    'ModuleSrcPrivatePath:       {0}' -f $Script:ModuleSrcPrivatePath
-    'ModuleSrcClassesPath:       {0}' -f $Script:ModuleSrcClassesPath
-    'ModuleSrcEnumsPath:         {0}' -f $Script:ModuleSrcEnumsPath
-    'ModuleSrcAssetsPath:        {0}' -f $Script:ModuleSrcAssetsPath
-    'TestPath:                   {0}' -f $Script:TestPath
-    'TestIntegrationPath:        {0}' -f $Script:TestIntegrationPath
-    'TestUnitPath:               {0}' -f $Script:TestUnitPath
-    'OutputPath:                 {0}' -f $Script:OutputPath
-    'ModulesOutputPath:          {0}' -f $Script:ModulesOutputPath
-    'ModuleOutputPath:           {0}' -f $Script:ModuleOutputPath
-    'ModuleOutputAssetsPath:     {0}' -f $Script:ModuleOutputAssetsPath
-    'ModuleOutputManifestFile:   {0}' -f $Script:ModuleOutputManifestFile
-    'ModuleOutputRootModuleFile: {0}' -f $Script:ModuleOutputRootModuleFile
-    'LocalPSModulePath:          {0}' -f $Script:LocalPSModulePath
-    'ConfigPath:                 {0}' -f $Script:ConfigPath
-    'DependenciesFile:           {0}' -f $Script:DependenciesFile
-    'env:PSModulePath:           {0}' -f $env:PSModulePath
-    'ProjectDirectories:         {0}' -f ($Script:ProjectDirectories -join ', ')
+    'ProjectRoot:                  {0}' -f $Script:ProjectRoot
+    'ModuleName:                   {0}' -f $Script:ModuleName
+    'SrcPath:                      {0}' -f $Script:SrcPath
+    'ModuleSrcPath:                {0}' -f $Script:ModuleSrcPath
+    'ModuleSrcManifestFile:        {0}' -f $Script:ModuleSrcManifestFile
+    'ModuleSrcRootModuleFile:      {0}' -f $Script:ModuleSrcRootModuleFile
+    'ModuleSrcPublicPath:          {0}' -f $Script:ModuleSrcPublicPath
+    'ModuleSrcPrivatePath:         {0}' -f $Script:ModuleSrcPrivatePath
+    'ModuleSrcClassesPath:         {0}' -f $Script:ModuleSrcClassesPath
+    'ModuleSrcEnumsPath:           {0}' -f $Script:ModuleSrcEnumsPath
+    'ModuleSrcAssetsPath:          {0}' -f $Script:ModuleSrcAssetsPath
+    'TestPath:                     {0}' -f $Script:TestPath
+    'TestIntegrationPath:          {0}' -f $Script:TestIntegrationPath
+    'TestUnitPath:                 {0}' -f $Script:TestUnitPath
+    'OutputPath:                   {0}' -f $Script:OutputPath
+    'ModulesOutputPath:            {0}' -f $Script:ModulesOutputPath
+    'ModuleOutputPath:             {0}' -f $Script:ModuleOutputPath
+    'ModuleOutputAssetsPath:       {0}' -f $Script:ModuleOutputAssetsPath
+    'ModuleOutputManifestFile:     {0}' -f $Script:ModuleOutputManifestFile
+    'ModuleOutputRootModuleFile:   {0}' -f $Script:ModuleOutputRootModuleFile
+    'LocalPSModulePath:            {0}' -f $Script:LocalPSModulePath
+    'ConfigPath:                   {0}' -f $Script:ConfigPath
+    'DependenciesFile:             {0}' -f $Script:DependenciesFile
+    'env:PSModulePath:             {0}' -f $env:PSModulePath
+    'ProjectDirectories:           {0}' -f ($Script:ProjectDirectories -join ', ')
+    'Phase:                        {0}' -f $Script:Phase
+    'PSGalleryApiKey present:      {0}' -f (-not [string]::IsNullOrWhiteSpace($Script:PSGalleryApiKey))
+    'PSRepositoryName:             {0}' -f $Script:PSRepositoryName
+    'PSRepositoryUrl:              {0}' -f $Script:PSRepositoryUrl
+    'PSRepositoryUrl:              {0}' -f $Script:PSRepositoryUrl
+    'PSRepositoryAuthMethod:       {0}' -f $Script:PSRepositoryAuthMethod
+    'PSRepositoryUser:             {0}' -f $Script:PSRepositoryUser
+    'PSRepositoryPassword present: {0}' -f (-not [string]::IsNullOrWhiteSpace($Script:PSRepositoryPassword))
+    'PSRepositoryApiKey present:   {0}' -f (-not [string]::IsNullOrWhiteSpace($Script:PSRepositoryApiKey))
 }

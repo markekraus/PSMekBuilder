@@ -86,4 +86,5 @@ Task Initialize {
     'PSRepositoryUser:             {0}' -f $Script:PSRepositoryUser
     'PSRepositoryPassword present: {0}' -f (-not [string]::IsNullOrWhiteSpace($Script:PSRepositoryPassword))
     'PSRepositoryApiKey present:   {0}' -f (-not [string]::IsNullOrWhiteSpace($Script:PSRepositoryApiKey))
+    'BuildVersion:                 {0}' -f $Script:BuildVersion
 }

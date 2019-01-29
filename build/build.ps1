@@ -39,7 +39,11 @@ Param(
 
     [Parameter()]
     [string]
-    $PSRepositoryApiKey = $env:PSRepositoryApiKey
+    $PSRepositoryApiKey = $env:PSRepositoryApiKey,
+
+    [Parameter()]
+    [string]
+    $BuildVersion = $env:GitVersion_NuGetVersionV2
 )
 
 Set-BuildHeader {
